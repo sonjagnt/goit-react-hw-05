@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import s from "./MovieList.module.css";
 
 function MovieList({ trendingMovies }) {
+  const location = useLocation();
+  console.log(location);
+
   return (
     <div>
       <ul className={s.movielist}>
