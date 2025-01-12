@@ -1,12 +1,17 @@
 import { lazy, useEffect, useState } from "react";
 import { getMovieByQuery } from "../../movies-api";
+import { useSearchParams } from "react-router-dom";
 // import MovieList from "../../components/MovieList/MovieList";
 import { Suspense } from "react";
 import Loader from "../../components/Loader/Loader";
 import toast, { Toaster } from "react-hot-toast";
+import s from "./MoviesPage.module.css";
+
 const MovieList = lazy(() => import("../../components/MovieList/MovieList"));
+
 function MoviesPage() {
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query") || "";
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
@@ -17,7 +22,7 @@ function MoviesPage() {
       toast.error("Please try to search for a movie!");
       return;
     }
-    setQuery(userQuery);
+    setSearchParams({ query: userQuery });
     form.reset();
   };
 
@@ -39,7 +44,7 @@ function MoviesPage() {
   return (
     <div>
       <Toaster />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={s.form}>
         <input type="text" name="query" />
         <button type="submit">Search</button>
       </form>

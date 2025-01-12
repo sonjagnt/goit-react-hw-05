@@ -8,7 +8,10 @@ function MovieList({ trendingMovies }) {
         {trendingMovies.map((movie) => {
           return (
             <div key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>
+              <Link
+                to={`/movies/${movie.id}`}
+                state={{ from: location.pathname }}
+              >
                 <li>{movie.original_title}</li>
               </Link>
             </div>

@@ -2,8 +2,8 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import { getMovies } from "./movies-api";
-import { useState, useEffect } from "react";
+// import { getMovies } from "./movies-api";
+// import { useState, useEffect } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import { lazy, Suspense } from "react";
 
@@ -18,18 +18,18 @@ const MovieReviews = lazy(() =>
 );
 
 function App() {
-  const [trendingMovies, setTrendingMovies] = useState([]);
-  useEffect(() => {
-    const loadTrendingMovies = async () => {
-      try {
-        const data = await getMovies();
-        setTrendingMovies(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    loadTrendingMovies();
-  }, []);
+  // const [trendingMovies, setTrendingMovies] = useState([]);
+  // useEffect(() => {
+  //   const loadTrendingMovies = async () => {
+  //     try {
+  //       const data = await getMovies();
+  //       setTrendingMovies(data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   loadTrendingMovies();
+  // }, []);
 
   return (
     <div>
@@ -38,10 +38,7 @@ function App() {
       </header>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route
-            path="/"
-            element={<HomePage trendingMovies={trendingMovies} />}
-          />
+          <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>

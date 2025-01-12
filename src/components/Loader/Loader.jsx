@@ -15,6 +15,7 @@ const Loader = () => {
         height="96"
         width="96"
         color="grey"
+        strokeColor="#1342ae"
         strokeWidth="5"
         animationDuration="0.75"
         ariaLabel="rotating-lines-loading"

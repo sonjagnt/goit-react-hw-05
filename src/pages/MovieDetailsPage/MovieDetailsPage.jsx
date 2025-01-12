@@ -1,4 +1,4 @@
-import { useParams, Link, Outlet, NavLink } from "react-router-dom";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { getMovieById } from "../../movies-api";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
@@ -7,6 +7,7 @@ import s from "./MovieDetailsPage.module.css";
 // import MovieCast from "../../components/MovieCast/MovieCast";
 
 function MovieDetailsPage() {
+  const location = useLocation();
   const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
   useEffect(() => {
@@ -26,11 +27,11 @@ function MovieDetailsPage() {
   }
   return (
     <div className={s.main}>
-      <NavLink to="/">
+      <Link to={location.state.from || "/"}>
         <button type="button" className={s["goback-btn"]}>
           Go Back
         </button>
-      </NavLink>
+      </Link>
       <div className={s.wrapper}>
         <img
           src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}

@@ -46,8 +46,14 @@
   padding: 12px;
   margin-bottom: 12px;
   color: #fafafa;
-  font-weight: 500;
+  font-weight: 600;
   background-color: #6699ff;
   border: none;
   border-radius: 4px;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.goback-btn:hover {
+  color: #fff;
+  background-color: #5780e0;
 }
