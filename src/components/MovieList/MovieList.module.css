@@ -3,10 +3,10 @@
 }
 
 .movielist li {
-  color: #000;
+  color: #fafafa;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .movielist li:hover {
-  color: #6699ff;
+  color: #b85aff;
 }

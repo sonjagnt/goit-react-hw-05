@@ -1,5 +1,24 @@
-h1 {
-  padding: 0 20px;
-  color: #1342ae;
+.title {
+  padding: 20px 20px;
+  color: #fafafa;
   margin-bottom: 18px;
+  position: relative;
+}
+
+.title::before {
+  position: absolute;
+  top: 80px;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: rgba(250, 250, 250, 0.4);
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+    85.2deg,
+    rgba(33, 3, 40, 1) 7.5%,
+    #2e1371 88.7%
+  );
 }

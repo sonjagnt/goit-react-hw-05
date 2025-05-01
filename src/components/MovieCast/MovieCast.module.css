@@ -1,9 +1,25 @@
 .cast-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 32px;
 }
 
 .cast-list li {
+  text-align: center;
   margin-bottom: 20px;
+}
+
+.img {
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.iconWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 200px;
+  background-color: rgba(33, 3, 40, 0.2);
+  margin-bottom: 12px;
 }

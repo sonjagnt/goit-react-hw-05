@@ -1,5 +1,4 @@
-// import MovieList from "../../components/MovieList/MovieList";
-import "./HomePage.module.css";
+import css from "./HomePage.module.css";
 import { useState, useEffect, Suspense, lazy } from "react";
 import { getMovies } from "../../movies-api";
 import Loader from "../../components/Loader/Loader";
@@ -21,7 +20,7 @@ function HomePage() {
   }, []);
   return (
     <div>
-      <h1>Trending Today</h1>
+      <h1 className={css.title}>Trending Today</h1>
       <MovieList trendingMovies={trendingMovies} />
       <Suspense fallback={<Loader />} />
     </div>

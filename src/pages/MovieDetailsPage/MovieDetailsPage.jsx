@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import { Suspense } from "react";
 import s from "./MovieDetailsPage.module.css";
-// import MovieCast from "../../components/MovieCast/MovieCast";
+import { IoChevronBack } from "react-icons/io5";
 
 function MovieDetailsPage() {
   const location = useLocation();
@@ -29,6 +29,7 @@ function MovieDetailsPage() {
     <div className={s.main}>
       <Link to={location.state.from || "/"}>
         <button type="button" className={s["goback-btn"]}>
+          <IoChevronBack size={18} />
           Go Back
         </button>
       </Link>
@@ -50,7 +51,7 @@ function MovieDetailsPage() {
         </div>
       </div>
       <div className={s["more-info"]}>
-        <h4>Additional Information</h4>
+        <h4 className={s.infoTitle}>Additional Information</h4>
         <ul>
           <li>
             <Link to="cast" state={location.state}>

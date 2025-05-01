@@ -1,0 +1,27 @@
+.reviewList {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.reviewList li {
+  position: relative;
+  margin-bottom: 12px;
+}
+.authorWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.author {
+  font-size: 18px;
+}
+
+.review::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+}

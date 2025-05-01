@@ -3,7 +3,7 @@ import s from "./MovieList.module.css";
 
 function MovieList({ trendingMovies }) {
   const location = useLocation();
-  console.log(location);
+
 
   return (
     <div>

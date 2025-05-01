@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -18,19 +17,6 @@ const MovieReviews = lazy(() =>
 );
 
 function App() {
-  // const [trendingMovies, setTrendingMovies] = useState([]);
-  // useEffect(() => {
-  //   const loadTrendingMovies = async () => {
-  //     try {
-  //       const data = await getMovies();
-  //       setTrendingMovies(data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   loadTrendingMovies();
-  // }, []);
-
   return (
     <div>
       <header>

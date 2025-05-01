@@ -1,20 +1,28 @@
 nav {
   display: flex;
   gap: 12px;
-  background-color: #5780e0;
-  padding: 12px 20px;
+  background-color: #020024;
+  background: linear-gradient(
+    90deg,
+    rgb(2, 0, 36) 0%,
+    rgb(76, 9, 121) 35%,
+    #2e1371 100%
+  );
+  padding: 20px;
 }
 
 .navlink {
+  display: flex;
+  gap: 6px;
   color: #fafafa;
   font-weight: 500;
-  background-color: #6699ff;
-  padding: 4px 12px;
-  border-radius: 4px;
+  background-color: #020024;
+  padding: 14px 22px;
+  border-radius: 14px;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .navlink:hover {
   color: #fff;
-  background-color: #5780e0;
+  background-color: #090979;
 }

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { getMovieReviews } from "../../movies-api";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
-
+import s from "./MovieReviews.module.css";
+import { FaCircleUser } from "react-icons/fa6";
 const MovieReviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
@@ -33,12 +34,15 @@ const MovieReviews = () => {
   return (
     <div>
       {loader && <Loader />}
-      <ul>
+      <ul className={s.reviewList}>
         {reviews.map((review) => {
           return (
-            <div key={review.id}>
+            <div key={review.id} className={s.review}>
               <li>
-                <h5>{review.author}</h5>
+                <div className={s.authorWrapper}>
+                  <FaCircleUser size={24} />
+                  <p className={s.author}>{review.author}</p>
+                </div>
                 <p>{review.content}</p>
               </li>
             </div>
