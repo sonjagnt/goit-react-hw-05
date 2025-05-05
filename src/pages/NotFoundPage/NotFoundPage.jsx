@@ -1,7 +1,9 @@
+import s from "./NotFoundPage.module.css";
+
 function NotFoundPage() {
   return (
-    <div>
-      <h3>Page not found.</h3>
+    <div className={s.wrapper}>
+      <h3>Oops... Page not found.</h3>
     </div>
   );
 }

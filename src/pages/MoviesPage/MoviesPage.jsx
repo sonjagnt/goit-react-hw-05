@@ -3,9 +3,10 @@ import { getMovieByQuery } from "../../movies-api";
 import { useSearchParams } from "react-router-dom";
 // import MovieList from "../../components/MovieList/MovieList";
 import { Suspense } from "react";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../ui/Loader/Loader";
 import toast, { Toaster } from "react-hot-toast";
 import s from "./MoviesPage.module.css";
+import Container from "../../ui/Container/Container";
 
 const MovieList = lazy(() => import("../../components/MovieList/MovieList"));
 
@@ -42,7 +43,7 @@ function MoviesPage() {
   }, [query]);
 
   return (
-    <div>
+    <Container>
       <Toaster />
       <form onSubmit={handleSubmit} className={s.form}>
         <input type="text" name="query" />
@@ -56,7 +57,7 @@ function MoviesPage() {
           query && !loading && <p>No movies found for your query.</p>
         )}
       </Suspense>
-    </div>
+    </Container>
   );
 }
 

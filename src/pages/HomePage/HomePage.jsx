@@ -1,7 +1,8 @@
 import css from "./HomePage.module.css";
 import { useState, useEffect, Suspense, lazy } from "react";
 import { getMovies } from "../../movies-api";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../ui/Loader/Loader";
+import Container from "../../ui/Container/Container";
 
 const MovieList = lazy(() => import("../../components/MovieList/MovieList"));
 
@@ -19,11 +20,11 @@ function HomePage() {
     loadTrendingMovies();
   }, []);
   return (
-    <div>
+    <Container>
       <h1 className={css.title}>Trending Today</h1>
       <MovieList trendingMovies={trendingMovies} />
       <Suspense fallback={<Loader />} />
-    </div>
+    </Container>
   );
 }
 

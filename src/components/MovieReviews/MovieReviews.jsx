@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMovieReviews } from "../../movies-api";
 import { useParams } from "react-router-dom";
-import Loader from "../Loader/Loader";
+import Loader from "../../ui/Loader/Loader";
 import s from "./MovieReviews.module.css";
 import { FaCircleUser } from "react-icons/fa6";
 const MovieReviews = () => {

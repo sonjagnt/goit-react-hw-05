@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Loader from "./components/Loader/Loader";
+import Loader from "./ui/Loader/Loader";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-// import { getMovies } from "./movies-api";
-// import { useState, useEffect } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import { lazy, Suspense } from "react";
 

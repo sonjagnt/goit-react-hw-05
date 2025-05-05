@@ -1,10 +1,11 @@
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { getMovieById } from "../../movies-api";
 import { useEffect, useState } from "react";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../ui/Loader/Loader";
 import { Suspense } from "react";
 import s from "./MovieDetailsPage.module.css";
 import { IoChevronBack } from "react-icons/io5";
+import Container from "../../ui/Container/Container";
 
 function MovieDetailsPage() {
   const location = useLocation();
@@ -26,7 +27,7 @@ function MovieDetailsPage() {
     return <Loader />;
   }
   return (
-    <div className={s.main}>
+    <Container className={s.main}>
       <Link to={location.state.from || "/"}>
         <button type="button" className={s["goback-btn"]}>
           <IoChevronBack size={18} />
@@ -52,7 +53,7 @@ function MovieDetailsPage() {
       </div>
       <div className={s["more-info"]}>
         <h4 className={s.infoTitle}>Additional Information</h4>
-        <ul>
+        <ul className={s.additionalInfo}>
           <li>
             <Link to="cast" state={location.state}>
               Cast
@@ -68,7 +69,7 @@ function MovieDetailsPage() {
           <Outlet />
         </Suspense>
       </div>
-    </div>
+    </Container>
   );
 }
 

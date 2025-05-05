@@ -4,7 +4,6 @@ import s from "./MovieList.module.css";
 function MovieList({ trendingMovies }) {
   const location = useLocation();
 
-
   return (
     <div>
       <ul className={s.movielist}>

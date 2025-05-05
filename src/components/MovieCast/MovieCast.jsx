@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieCredits } from "../../movies-api";
-import Loader from "../Loader/Loader";
+import Loader from "../../ui/Loader/Loader";
 import s from "./MovieCast.module.css";
 import { PiCamera } from "react-icons/pi";
 
@@ -28,26 +28,23 @@ const MovieCast = () => {
     <div className={s.wrapper}>
       {loader && <Loader />}
       <ul className={s["cast-list"]}>
-        {cast.map((memb) => {
-          return (
-            <div key={memb.id}>
-              {memb.profile_path ? (
-                <img
-                  className={s.img}
-                  src={`https://image.tmdb.org/t/p/w200/${memb.profile_path}`}
-                />
-              ) : (
-                <div className={s.iconWrap}>
-                  <PiCamera size={48} className={s.icon} />
-                </div>
-              )}
-              <li>
-                {memb.character}
-                <h5>{memb.original_name}</h5>
-              </li>
-            </div>
-          );
-        })}
+        {cast.map((memb) => (
+          <li className={s.member} key={memb.id}>
+            {memb.profile_path ? (
+              <img
+                className={s.img}
+                src={`https://image.tmdb.org/t/p/w200/${memb.profile_path}`}
+                alt={memb.original_name}
+              />
+            ) : (
+              <div className={s.iconWrap}>
+                <PiCamera size={48} className={s.icon} />
+              </div>
+            )}
+            <p>{memb.character}</p>
+            <h5>{memb.original_name}</h5>
+          </li>
+        ))}
       </ul>
     </div>
   );
