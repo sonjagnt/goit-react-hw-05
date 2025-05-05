@@ -5,10 +5,6 @@
   color: #fafafa;
   margin-bottom: 18px;
   position: relative;
-
-  @media (min-width: 768px) {
-    max-width: none;
-  }
 }
 
 .title::before {
@@ -18,8 +14,14 @@
   height: 1px;
   width: 100%;
   background-color: rgba(250, 250, 250, 0.4);
+}
 
-  @media (min-width: 768px) {
-    top: 80px;
+@media (min-width: 768px) {
+  .title {
+    max-width: none;
+  }
+
+  .title::before {
+    top: 90px;
   }
 }

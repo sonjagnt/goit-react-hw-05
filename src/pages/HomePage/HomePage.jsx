@@ -1,4 +1,4 @@
-import css from "./HomePage.module.css";
+import s from "./HomePage.module.css";
 import { useState, useEffect, Suspense, lazy } from "react";
 import { getMovies } from "../../movies-api";
 import Loader from "../../ui/Loader/Loader";
@@ -21,7 +21,7 @@ function HomePage() {
   }, []);
   return (
     <Container>
-      <h1 className={css.title}>Trending Today</h1>
+      <h1 className={s.title}>Trending Today</h1>
       <MovieList trendingMovies={trendingMovies} />
       <Suspense fallback={<Loader />} />
     </Container>
